@@ -1,1 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Lantern Press - Stories After Dark</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 3px solid #ff8c42;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo-section h1 {
+            font-size: 3rem;
+            color: #ff8c42;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #d4a574;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .about-section {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff8c42;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            color: #ff8c42;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .books-section {
+            margin-bottom: 3rem;
+        }
+
+        .books-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff8c42;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .book-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #ff8c42;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.3);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 350px;
+            background: #2a2a3e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-info h3 {
+            color: #ff8c42;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .book-info p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .series-info {
+            background: rgba(255, 140, 66, 0.1);
+            border-left: 3px solid #ff8c42;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #d4a574;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 3px solid #ff8c42;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            color: #d4a574;
+        }
+
+        .contact-info a {
+            color: #ff8c42;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffa566;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .logo-section h1 {
+                font-size: 2rem;
+            }
+
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <h1>🏮 Midnight Lantern Press 🏮</h1>
+            <p class="tagline">Stories After Dark</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="about-section">
+            <h2>Welcome to Midnight Lantern Press</h2>
+            <p>
+                Midnight Lantern Press publishes adult fiction that explores the depths of human connection and desire. 
+                Our Stories After Dark series delves into themes of love, obsession, chance encounters, and the uncertain 
+                borders between desire and reality. Published from Tokyo, Japan, each work is crafted with literary intention 
+                and emotional authenticity.
+            </p>
+        </section>
+
+        <section class="books-section">
+            <h2>Stories After Dark Series</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="IMG_6531.png" alt="Uncertain Borders: Uncertainties">
+                    </div>
+                    <div class="book-info">
+                        <h3>Uncertain Borders: Uncertainties</h3>
+                        <p>An anthology that opens the Stories After Dark universe, exploring the complex emotions and desires that define human relationships.</p>
+                        <div class="series-info">
+                            <strong>Stories After Dark</strong><br>
+                            Anthology • By Rusty Pohl
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="IMG_6402.jpeg" alt="Uncertain Borders: Book One">
+                    </div>
+                    <div class="book-info">
+                        <h3>Uncertain Borders: Book One</h3>
+                        <p>The first full novel in the series, diving deeper into the intricate dance of desire, connection, and the boundaries we navigate in love.</p>
+                        <div class="series-info">
+                            <strong>Stories After Dark</strong><br>
+                            Novel • By Rusty Pohl
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="IMG_6490.jpeg" alt="Stories After Dark Series">
+                    </div>
+                    <div class="book-info">
+                        <h3>More Stories Coming</h3>
+                        <p>The Stories After Dark series continues to expand, bringing new tales of love, obsession, and the uncertain borders between desire and belonging.</p>
+                        <div class="series-info">
+                            <strong>Stories After Dark</strong><br>
+                            Forthcoming
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="D2368755-14C7-4697-9401-3F6B0DA2868...png" alt="Midnight Lantern Press Logo">
+                    </div>
+                    <div class="book-info">
+                        <h3>Join the Community</h3>
+                        <p>Follow Midnight Lantern Press for updates on new releases, exclusive content, and stories that explore the depths of human emotion and desire.</p>
+                        <div class="series-info">
+                            <strong>Stories After Dark</strong><br>
+                            All Works • By Rusty Pohl
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Midnight Lantern Press</strong></p>
+        <p>Stories After Dark Series • By Rusty Pohl</p>
+        <p>Published from Tokyo, Japan</p>
+        <p>© 2026 Rusty Pohl. All rights reserved.</p>
+        <div class="contact-info">
+            <p>For inquiries: <a href="mailto:rustypohl@atomicmail.io">rustypohl@atomicmail.io</a></p>
+        </div>
+    </footer>
+</body>
+</html>
