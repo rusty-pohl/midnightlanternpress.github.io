@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncertain Borders – Copyright Page</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --paper-dark: #ede5d4;
+    --gold: #9a7b3f;
+    --gold-light: #c4a05a;
+    --muted: #6b5e4a;
+    --faint: #a89880;
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--paper);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1.5rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--ink);
+  }
+
+  /* Subtle paper texture via layered pseudo */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    min-height: 760px;
+    background: var(--paper);
+    padding: 3.5rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.08),
+      0 4px 16px rgba(0,0,0,0.10),
+      0 12px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(154, 123, 63, 0.18);
+  }
+
+  /* Top lantern ornament */
+  .lantern-mark {
+    text-align: center;
+    margin-bottom: 2.2rem;
+    opacity: 0.55;
+  }
+  .lantern-mark svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--gold);
+  }
+
+  /* Divider */
+  .rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+    margin: 1.5rem 0;
+    opacity: 0.6;
+  }
+  .rule.thin {
+    height: 1px;
+    opacity: 0.35;
+    margin: 1rem 0;
+  }
+
+  /* GitHub / site badge row */
+  .badge-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .badge-row svg {
+    width: 12px; height: 12px;
+    fill: var(--gold);
+    flex-shrink: 0;
+  }
+  .badge-sep { color: var(--faint); flex-shrink: 0; }
+  .badge-row .handle { flex-shrink: 1; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Title block */
+  .title-block {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .series-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .main-title {
+    font-family: 'IM Fell English', serif;
+    font-size: 2.05rem;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .byline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .byline span {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  /* Subtitle badges */
+  .sub-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1rem;
+  }
+  .sub-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  /* About the author */
+  .about-block {
+    margin-bottom: 0;
+  }
+  .about-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.65rem;
+  }
+  .about-body {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .about-body em {
+    font-style: normal;
+    color: var(--ink);
+  }
+
+  /* Copyright block */
+  .copyright-block {
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+  .copyright-line {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+  }
+  .copyright-line strong {
+    font-weight: 400;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .copyright-line .rights {
+    font-size: 0.72rem;
+    color: var(--faint);
+    letter-spacing: 0.04em;
+  }
+
+  /* Publisher block */
+  .publisher-block {
+    margin-top: 1.4rem;
+  }
+  .pub-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .pub-location {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--faint);
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+  .imprint-tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(154, 123, 63, 0.35);
+    padding: 0.28rem 0.65rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Web / handle lines */
+  .web-block {
+    margin-top: 1.2rem;
+  }
+  .web-line {
+    font-size: 0.72rem;
+    color: var(--faint);
+    letter-spacing: 0.04em;
+    line-height: 1.9;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .web-line svg {
+    width: 10px; height: 10px;
+    fill: var(--gold);
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+  .web-line .handle {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+  }
+
+  /* Bottom colophon mark */
+  .colophon {
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0.28;
+  }
+  .colophon svg { width: 22px; fill: var(--gold); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Top mark -->
+  <div class="lantern-mark">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <!-- Simple lantern silhouette -->
+      <path d="M12 1 L12 3 M9 3 L15 3 L14 6 Q14 6.5 13.5 6.5 L10.5 6.5 Q10 6.5 10 6 Z M10 6.5 L9 16 Q9 17.5 12 17.5 Q15 17.5 15 16 L14 6.5 M9 16.5 Q8.5 17 8.5 17.5 L15.5 17.5 Q15.5 17 15 16.5 M9.5 19 L14.5 19 L14 21 Q13.5 22 12 22 Q10.5 22 10 21 Z"/>
+    </svg>
+  </div>
+
+  <!-- Badge row: GitHub · site -->
+  <div class="badge-row">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+    <span class="handle">midnightlanternpress</span>
+    <span class="badge-sep">·</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+    </svg>
+    <span>midnightlanternpress.com</span>
+  </div>
+
+  <!-- Title -->
+  <div class="title-block">
+    <span class="series-label">Midnight Lantern Press</span>
+    <div class="main-title">Uncertain Borders</div>
+    <div class="byline">by <span>Rusty Pohl</span></div>
+    <div class="sub-badges">
+      <span class="sub-badge">A Stories After Dark Novel</span>
+      <span class="sub-badge" style="color: var(--gold); letter-spacing:0.18em;">Published by Midnight Lantern Press</span>
+      <span class="sub-badge">Tokyo, Japan</span>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- About the Author -->
+  <div class="about-block">
+    <span class="about-label">About the Author</span>
+    <p class="about-body">
+      <em>Rusty Pohl</em> is the adult-fiction author writing under the
+      <em>Stories After Dark</em> imprint. Rusty explores love, obsession,
+      chance encounters, and the uncertain borders between desire and belonging.
+    </p>
+  </div>
+
+  <div class="rule thin"></div>
+
+  <!-- Copyright -->
+  <div class="copyright-block">
+    <p class="copyright-line">
+      <strong>Copyright © 2026 Rusty Pohl</strong><br>
+      <span class="rights">All rights reserved.</span>
+    </p>
+
+    <div class="publisher-block">
+      <span class="pub-name">Midnight Lantern Press</span>
+      <span class="pub-location">Tokyo, Japan</span>
+      <span class="imprint-tag">Stories After Dark</span>
+    </div>
+
+    <div class="web-block">
+      <div class="web-line">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        midnightlanternpress.com
+      </div>
+      <div class="web-line">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        midnightlanternpress.com/stories-after-dark
+      </div>
+      <div class="web-line" style="margin-top:0.2rem;">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <span class="handle">github.com/midnightlanternpress</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom colophon mark -->
+  <div class="colophon">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2 L13.5 8 L20 8 L14.5 12 L17 18 L12 14 L7 18 L9.5 12 L4 8 L10.5 8 Z"/>
+    </svg>
+  </div>
+
+</div>
+</body>
+</html>
